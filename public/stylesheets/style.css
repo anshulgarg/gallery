@@ -1,9 +1,40 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: orange;
   background-color: black;
 }
 
 a {
   color: #00B7FF;
+}
+
+#side{
+	width: 40%;
+	float: left;
+}
+
+#main{
+	width: 60%;
+	float: left;
+}
+
+#gallery img{
+	margin: 3px;	
+	width: 128px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	vertical-align: top;
+}
+
+#mainimage{
+	max-width: 100%;
+}
+
+.current{
+	border-color: orange !important;
+}
+
+#tags{
+	word-wrap: break-word;
 }

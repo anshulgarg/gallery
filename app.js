@@ -6,7 +6,6 @@ var express = require('express'),
 	routes = require('./routes'),
 	http = require('http'),
 	path = require('path'),
-	gm = require('gm'),
 	catalog = require('./catalog');
 
 var app = express();
@@ -29,7 +28,9 @@ app.configure('development', function() {
 
 var dataloaded = false;
 var data;
-catalog.generate('public/images/gallery', function(err, images) {
+var gallery_path = 'public/images/gallery4/';
+catalog.generate(gallery_path, function(err, images) {
+	if(err) throw ex;
 	console.log(images.length);
 	data = images;
 	dataloaded = true;

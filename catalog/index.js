@@ -5,11 +5,13 @@ var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 var catalogEventEmitter = new EventEmitter();
 
-var DIR = 'public/images/gallery/';
-var DIR_TH =  DIR + 'thumbs/';
+var DIR;
+var DIR_TH;
 
 var images = [];
 exports.generate = function(dir, callback) {
+	DIR=dir;
+	DIR_TH=DIR + 'thumbs/';
 	catalogEventEmitter.on("images-loaded", function(images) {
 		callback(null, images);
 	});
@@ -89,7 +91,5 @@ function Image(opts) {
 	this.created = opts.created;
 	this.path_large = opts.path_large;
 	this.path_small = opts.path_small;
-	this.tags = opts.tags;
+	this.tags = opts.tags.map(function(tag){return tag.trim();});
 }
-//Iptc.Application2.ObjectName => title
-//Exif.Photo.DateTimeOriginal => date taken
