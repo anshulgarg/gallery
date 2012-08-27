@@ -28,7 +28,7 @@ app.configure('development', function() {
 
 var dataloaded = false;
 var data;
-var gallery_path = 'public/images/gallery4/';
+var gallery_path = 'public/images/gallery/';
 catalog.generate(gallery_path, function(err, images) {
 	if(err) throw ex;
 	console.log(images.length);
